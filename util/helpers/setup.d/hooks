@@ -1,0 +1,4 @@
+#!/bin/bash
+
+setup_symlink ".git/" "hooks" "../util/git/hooks"
+
