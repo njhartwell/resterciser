@@ -59,7 +59,7 @@ PRETTY_YAML="unexpand"
 # Lint command-line options for various language/program pairs
 LINT_CSS_PRETTYCSS_OPTIONS="-s --ignore autocorrect --ignore autocorrect-swap --ignore suggest-relative-unit --ignore unofficial"
 LINT_JS_JSL_OPTIONS="-nologo -nofilelisting -nosummary -process"
-LINT_JS_JSLINT_OPTIONS=""
+LINT_JS_JSLINT_OPTIONS="--nomen"
 LINT_JSON_JSLINT_OPTIONS=""
 LINT_PHP_CLI_OPTIONS="-d error_reporting=E_ALL -d display_errors=0"
 
