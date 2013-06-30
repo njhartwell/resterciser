@@ -1,1 +1,0 @@
-../doc/bare_repo/3rd_Party.md
