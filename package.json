@@ -1,0 +1,15 @@
+{
+  "name": "resterciser",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Nathan Hartwell <njhartwell@gmail.com>",
+  "description": "Simple REST testing (and mocking) framework",
+  "dependencies" : {
+	"js-yaml": "*",
+	"optimist": "*"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
