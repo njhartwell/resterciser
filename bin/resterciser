@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var argv, options, runner;
+argv = require('optimist')
+	.demand(0)
+	.demand('url-base')
+	.argv;
+
+runner = require('../lib/resterciser/runner.js');
+
+// @FUTURE: Support more reporters
+options = {
+	reporters: [
+		require('../lib/resterciser/reporter/console_reporter')
+	],
+	urlBase: argv['url-base']
+};
+
+runner.run(argv._[0], options);
