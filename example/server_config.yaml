@@ -1,57 +1,57 @@
 initialState: noCart
 
 stateful:
-	noCart:
-		- path: ^/carts$
-		  method: POST
-		  code: 201
-		  headers:
-			Location: /carts/123
-			Content-Type: application/json
-		  changeState: oneCart
-	oneCart:
-		- path: ^/carts/123$
-		  method: GET
-		  headers:
-			Content-type: application/json
-		  body: |
-			{
-				"items": [
-					{
-						"name": "Golf Club",
-						"price": 33.12,
-						"sku": "2254242",
-					},
-				]
-				"_links": {
-					"item": [
-						{
-							"href": "/carts/123/items/0",
-							"name": "cart-item",
-						}
-					]
-				}
-			}
-		- path: ^/carts/123$
-		  method: DELETE
-		  code: 410
-		  changeState: noCart
-		- path: ^/carts/123/payment$
-		  method: POST
-		  code: 201
-		  changeState: done
-	done:
-		- path: ^/orders/123$
-		  method: GET
-		  headers:
-			Content-type: application/json
-		  body: |
-			{
-				"message": "You Win!"
-			}
+    noCart:
+        - path: ^/carts$
+          method: POST
+          code: 201
+          headers:
+            Location: /carts/123
+            Content-Type: application/json
+          changeState: oneCart
+    oneCart:
+        - path: ^/carts/123$
+          method: GET
+          headers:
+            Content-type: application/json
+          body: |
+            {
+                "items": [
+                    {
+                        "name": "Golf Club",
+                        "price": 33.12,
+                        "sku": "2254242",
+                    },
+                ]
+                "_links": {
+                    "item": [
+                        {
+                            "href": "/carts/123/items/0",
+                            "name": "cart-item",
+                        }
+                    ]
+                }
+            }
+        - path: ^/carts/123$
+          method: DELETE
+          code: 410
+          changeState: noCart
+        - path: ^/carts/123/payment$
+          method: POST
+          code: 201
+          changeState: done
+    done:
+        - path: ^/orders/123$
+          method: GET
+          headers:
+            Content-type: application/json
+          body: |
+            {
+                "message": "You Win!"
+            }
 stateless:
-	- path: ^/about$
-	  method: GET
-	  headers:
-		Content-type: text/plain
-	  body: "This is fake API"
+    - path: ^/about$
+      method: GET
+      headers:
+        Content-type: text/plain
+      body: "This is fake API"
