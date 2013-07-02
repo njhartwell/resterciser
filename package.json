@@ -6,6 +6,7 @@
   "description": "Simple REST testing (and mocking) framework",
   "dependencies" : {
 	"js-yaml": "*",
+	"promised-io": "*",
 	"optimist": "*"
   },
   "license": "MIT",
