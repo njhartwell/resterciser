@@ -1,0 +1,27 @@
+sequence:
+    - request: GET /about
+      expect: 200
+    - request: GET /carts/123
+      expect: 404
+    - request: POST /carts
+      headers:
+        Content-Type: application/json
+      body: |
+        {"items": ["a2309234", "a230923" ]}
+      expect: 201
+    - request: DELETE /carts/123
+      expect: 410
+    # Concurrent requests... Fun!
+    - 
+      - request: GET /about
+        expect: 200
+      - request: GET /about
+        expect: 200
+      - request: GET /about
+        expect: 200
+      - request: GET /about
+        expect: 200
+      - request: GET /about
+        expect: 200
+      - request: GET /about
+        expect: 200
