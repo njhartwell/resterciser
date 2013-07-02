@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var argv, server;
+
+argv = require("optimist")
+	.usage("Usage: $0 -p [port] [config.yaml]")
+	.demand(["p"])
+	.argv;
+
+server = require('../lib/server/server');
+server.run(argv._[0], argv.p);
