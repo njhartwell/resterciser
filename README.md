@@ -1,6 +1,6 @@
 # RESTerciser #
 
-A simple framework for testing REST APIs
+REST API Testing Framework
 
 ## Usage ##
 @TODO Write it
