@@ -9,9 +9,15 @@ sequence:
       body: |
         {"items": ["a2309234", "a230923" ]}
       expect: 201
-    - request: DELETE /carts/123
+      after:
+        - grabHeader:
+            header: Location
+            parameter: cartPath
+    - request: GET %cartPath%
+      expect: 200
+    - request: DELETE %cartPath%
       expect: 410
-    # Concurrent requests... Fun!
+    # Concurrent requests
     - 
       - request: GET /about
         expect: 200
