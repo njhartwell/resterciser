@@ -20,9 +20,22 @@ Warning: This is a very early preview--it is missing important things like:
 
 ## Installation ##
 
+Basic:
+
     git clone https://github.com/njhartwell/resterciser
     cd resterciser
     npm install
+
+If you want to contribute, hack, and do other cool things:
+
+    git clone https://github.com/njhartwell/resterciser
+    cd resterciser
+    ./util/bin/setup_repository
+
+setup_repository?
+
+This is part of the excellent https://github.com/fidian/bare_repo project which automagically sets up hooks
+and other useful things to eleminate boilerplate repository configuration.
 
 ## Usage ##
 
