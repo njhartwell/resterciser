@@ -1,0 +1,31 @@
+#!/bin/bash
+
+binDir="$(dirname "$0")"
+
+if [[ -z $1 ]]; then
+	port='9429'
+else
+	port="$1"
+fi
+
+echo "Server port set to $port"
+
+$binDir/mock-server -p $port $binDir/../example/server_config.yaml 2>&1 > /dev/null &
+serverPid=$!
+
+echo "Started Server (PID $serverPid)"
+
+$binDir/resterciser --url-base http://localhost:$port $binDir/../example/test_sequence.yaml
+exitCode=$?
+
+kill $serverPid
+
+echo ''
+echo '--------------------'
+if [[ 0 != $exitCode ]]; then
+	echo "TEST FAILED"
+else
+	echo "TEST PASSED"
+fi
+
+exit $exitCode

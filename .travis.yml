@@ -1,0 +1,5 @@
+language: node_js
+script: ./bin/test
+node_js:
+  - 0.8
+  - 0.10
