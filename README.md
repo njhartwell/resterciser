@@ -65,6 +65,18 @@ is not met, you'll see an even more ugly error and stack trace (I warned you)
 
 See example/test_sequence.yaml for more examples.
 
+## Future ##
+
+In addition to the core improvements mentioned above, the following items are high the list:
+
+- Provide a bridge / driver to generate test suites for a popular testing framework (probably Mocha)
+This would provide a nice suite of reporting tools and make it easier for newcomers to pull this kind
+of testing into existing projects.
+- Add a better suite of tests to existing code
+- Add request descriptions
+- Support alternate test sequence formats
+- Add pretty request/response dumping and archiving
+- Add documentation generation
 
 # Mock-A-Rest #
 
